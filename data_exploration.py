@@ -59,11 +59,16 @@ df_confirmed
 
 # + [markdown]
 # ## Analyzing a famous cruise ship's data with this dataset
-# The Diamond Princess cruise ship is one of the most famous (and experimentally controlled) sources of informations for 
+# The Diamond Princess cruise ship is maybe one of the most famous (and 
+# experimentally controlled) sources of information for studying the contagion
+# dynamics and death distribution of the virus.
+#
+# Let's first estimate the death percentage of confirmed cases for this ship
+
 # + 
 province_state = 'Diamond Princess cruise ship'
 dp_deaths = df_deaths['3/10/20'][df_deaths['Province/State'] == province_state]
 dp_confirmed = df_confirmed['3/10/20'][df_confirmed['Province/State'] == province_state]
-
+from IPython import embed; embed()
 # + 
-dp_deaths/dp_confirmed
+print('Death percentage of confirmed cases', dp_deaths/dp_confirmed*100)
