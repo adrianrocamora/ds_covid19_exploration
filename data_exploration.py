@@ -66,6 +66,4 @@ dp_deaths = df_deaths['3/10/20'][df_deaths['Province/State'] == province_state]
 dp_confirmed = df_confirmed['3/10/20'][df_confirmed['Province/State'] == province_state]
 
 # + 
-dp_deaths
-
-
+dp_deaths/dp_confirmed
