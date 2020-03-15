@@ -74,7 +74,7 @@ dp_confirmed = df_confirmed['3/10/20'][df_confirmed['Province/State'] == provinc
 print('Death percentage of confirmed cases', str(round(dp_deaths.iloc[0]/dp_confirmed.iloc[0]*100, 2))+'%')
 
 # + [markdown]
-# Also let's plot out the top of deaths per Country/Region
+# Also let's plot out the top confirmed cases and deaths per Country/Region
 
 # +
 df_confirmed.head(4).plot.bar(x='Country/Region', y='3/10/20', style='o')
