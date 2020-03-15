@@ -55,11 +55,11 @@ df_deaths = pd.read_csv(os.path.join(data_dir, file_deaths))
 df_recovered = pd.read_csv(os.path.join(data_dir, file_recovered))
 
 # Sort by highest value at most recently updated date
-df_confirmed.sort_values(by='3/10/20', inplace=True)
-df_deaths.sort_values(by='3/10/20', inplace=True)
-df_recovered.sort_values(by='3/10/20', inplace=True)
+df_confirmed.sort_values(by='3/10/20', inplace=True, ascending=False)
+df_deaths.sort_values(by='3/10/20', inplace=True, ascending=False)
+df_recovered.sort_values(by='3/10/20', inplace=True, ascending=False)
 
-# + 
+# +
 df_deaths
 
 # + [markdown]
@@ -68,20 +68,22 @@ df_deaths
 #
 # Let's first estimate the death percentage of confirmed cases for this ship
 
-# + 
+# +
 province_state = 'Diamond Princess cruise ship'
 dp_deaths = df_deaths['3/10/20'][df_deaths['Province/State'] == province_state]
 dp_confirmed = df_confirmed['3/10/20'][df_confirmed['Province/State'] == province_state]
 
-# + [markdown]
-# Also let's plot out the distribution of deaths per zone
-print(df_deaths)
-df_confirmed.plot(x='Country/Region', y='3/10/20', style='o')
-df_deaths.plot(x='Country/Region', y='3/10/20', style='o')
-plt.show()
-
-# + 
+# +
 print('Death percentage of confirmed cases', str(round(dp_deaths.iloc[0]/dp_confirmed.iloc[0]*100, 2))+'%')
+
+# + [markdown]
+# Also let's plot out the top of deaths per Country/Region
+
+# +
+print(df_deaths)
+df_confirmed.head(4).plot.bar(x='Country/Region', y='3/10/20', style='o')
+df_deaths.head(4).plot.bar(x='Country/Region', y='3/10/20', style='o')
+plt.show()
 
 # + [markdown]
 # Now that we've tested the dataset a bit we are ready to plot out other things as well as try to model the disease. One possible equation we can use is the classic SIR compartmental model with components: susceptible $S(t)$, infected $I(t)$, and removed $R(t)$
