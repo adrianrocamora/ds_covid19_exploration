@@ -69,6 +69,6 @@ df_confirmed
 province_state = 'Diamond Princess cruise ship'
 dp_deaths = df_deaths['3/10/20'][df_deaths['Province/State'] == province_state]
 dp_confirmed = df_confirmed['3/10/20'][df_confirmed['Province/State'] == province_state]
-from IPython import embed; embed()
+
 # + 
-print('Death percentage of confirmed cases', dp_deaths/dp_confirmed*100)
+print('Death percentage of confirmed cases', str(round(dp_deaths.iloc[0]/dp_confirmed.iloc[0]*100, 2))+'%')
