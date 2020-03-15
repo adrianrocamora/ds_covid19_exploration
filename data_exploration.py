@@ -77,8 +77,8 @@ print('Death percentage of confirmed cases', str(round(dp_deaths.iloc[0]/dp_conf
 # Also let's plot out the top confirmed cases and deaths per Country/Region
 
 # +
-df_confirmed.head(4).plot.bar(x='Country/Region', y='3/10/20', style='o')
-df_deaths.head(4).plot.bar(x='Country/Region', y='3/10/20', style='o')
+df_confirmed.head(4).plot.bar(x='Country/Region', y='3/10/20')
+df_deaths.head(4).plot.bar(x='Country/Region', y='3/10/20')
 plt.show()
 
 # + [markdown]
