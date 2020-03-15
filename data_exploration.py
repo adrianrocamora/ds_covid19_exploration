@@ -18,9 +18,6 @@
 
 # + [markdown]
 # ## Data Sources:
-# 2019 Coronavirus dataset (January - February 2020)
-# Tracking the spread of 2019-nCoV
-# https://www.kaggle.com/brendaso/2019-coronavirus-dataset-01212020-01262020
 # 
 # Novel Corona Virus 2019 Dataset
 # Day level information on covid-19 affected cases
@@ -80,7 +77,6 @@ print('Death percentage of confirmed cases', str(round(dp_deaths.iloc[0]/dp_conf
 # Also let's plot out the top of deaths per Country/Region
 
 # +
-print(df_deaths)
 df_confirmed.head(4).plot.bar(x='Country/Region', y='3/10/20', style='o')
 df_deaths.head(4).plot.bar(x='Country/Region', y='3/10/20', style='o')
 plt.show()
